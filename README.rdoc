@@ -1,7 +1,7 @@
 == Cinema
 
 
-## Objectif :
+=== Objectif :
 
  Créer un annuaire de film qui propose un nom, une description et la liste des acteurs qui jouent dans ce film.
 
@@ -18,7 +18,7 @@ le tout avec :
 
 
 
-## Resultat :
+=== Resultat :
 
 Tout y est :
 
