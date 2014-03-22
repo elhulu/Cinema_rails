@@ -3,12 +3,12 @@
 
 ## Objectif :
 
-Créer un annuaire de film qui propose un nom, une description et la liste des acteurs qui jouent dans ce film.
+ Créer un annuaire de film qui propose un nom, une description et la liste des acteurs qui jouent dans ce film.
 
-Il faut pouvoir créer/éditer/supprimer un film et créer/éditer/supprimer un acteur.
+ Il faut pouvoir créer/éditer/supprimer un film et créer/éditer/supprimer un acteur.
 
-1 acteur peut être dans plusieurs films
-1 film est composé d'au moins 2 acteurs
+ 1 acteur peut être dans plusieurs films
+ 1 film est composé d'au moins 2 acteurs
 
 le tout avec : 
 
@@ -22,9 +22,9 @@ le tout avec :
 
 Tout y est :
 
- * CRUD complet pour les films.
- * CRUD complet pour les acteurs.
- * Recherche de film / acteur.
- * Système d'upload d'image.
+* CRUD complet pour les films.
+* CRUD complet pour les acteurs.
+* Recherche de film / acteur.
+* Système d'upload d'image.
  
  
