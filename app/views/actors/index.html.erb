@@ -1,0 +1,31 @@
+<h1>Acteurs</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Prenom</th>
+      <th>Nom</th>
+      <th>Photo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @actors.each do |actor| %>
+      <tr>
+        <td><%= actor.first_name %></td>
+        <td><%= actor.last_name %></td>
+        <td><%= link_to image_tag(actor.picture_url, :height => 80) , actor_path(actor.id) if actor.picture.present? %></td>
+        <td><%= link_to 'Afficher', actor %></td>
+        <td><%= link_to 'Modifier', edit_actor_path(actor) %></td>
+        <td><%= link_to 'Supprimer', actor, method: :delete, data: { confirm: 'Etes vous sur ?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Ajouter un acteur', new_actor_path, :class => "btn btn-primary btn-lg", :role => "button" %>

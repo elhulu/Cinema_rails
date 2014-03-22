@@ -1,0 +1,42 @@
+<div class="jumbotron">
+    <h1>Bienvenue sur <strong>Cinema</strong></h1>
+    <p><%= link_to 'Voir les films', films_path, :class => "btn btn-primary btn-lg", :role => "button" %></p>
+</div>
+
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Nos films</h3>
+            </div>
+            <div class="panel-body">
+                <p>Ajoutez, modifier ou supprimer un film. Le film doit avoir au moins deux acteurs au casting. Vous pouvez également ajouter l'affiche du film. Cette dernière étape est toutefois optionnelle</p>
+                <p><%= link_to "Voir les films", films_path, class: "navbar-brand", class: "btn btn-primary pull-right" %></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Tout le gratin est la !</h3>
+            </div>
+            <div class="panel-body">
+                <p>Les acteurs sont choyés chez nous ! Il ont eux aussi droit à une photo qui les mettra en valeur dans chaque recherche.</p>
+                <p><%= link_to "Voir nos acteurs", actors_path, class: "navbar-brand", class: "btn btn-primary pull-right" %></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">On regarde quoi ce soir ?</h3>
+            </div>
+            <div class="panel-body">
+                <p>En deux clics c'est réglé grâce à la recherche ! Vous pouvez l'effectuer sur toutes les pages et trouver les films et acteurs le plus simplement du monde...</p>
+            </div>
+        </div>
+    </div>
+</div>

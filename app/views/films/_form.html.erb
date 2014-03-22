@@ -1,0 +1,42 @@
+<%= form_for(@film, :html => {:multipart => true}) do |f| %>
+  <% if @film.errors.any? %>
+    <div id="error_explanation">
+      <h2>Vous avez <%= pluralize(@film.errors.count, "erreur") %> :</h2>
+
+      <ul>
+      <% @film.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if flash[:error_msg] %>
+    <div class="alert alert-warning">
+      <%= flash[:error_msg] %>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nom %><br>
+    <%= f.text_field :name, placeholder: "Titre du film", :maxlength=>"60" %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, size: "60x12" %>
+  </div>
+  <div class="field">
+    <%= f.label :affiche %><br>
+    <%= f.file_field :picture %>
+  </div>
+
+    <p><strong>Acteurs : </strong></p>
+	<% @actors.each do |actor| %>
+		<%= check_box_tag "film[actor_ids][]", actor.id, @film.actors.include?(actor) %>
+		<%= actor.first_name  + " " +actor.last_name %>
+	<% end %>
+
+  <div class="actions">
+    <%= f.submit "Valider" %>
+  </div>
+<% end %>

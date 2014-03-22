@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom :</strong>
+  <%= @film.name %>
+</p>
+
+<p>
+  <strong>Description :</strong>
+  <%= @film.description %>
+</p>
+
+<p>
+  <strong>Affiche :</strong>
+  <%= image_tag(@film.picture_url, :width => 200) if @film.picture.present? %>
+</p>
+
+<p>
+    <ul>
+        <% @film.actors.each do |actor| %>
+            <li>
+                <p><%= link_to image_tag(actor.picture_url, :width => 200), actor_path(actor.id) %></p>
+                <p><%= link_to actor.first_name + " " + actor.last_name, actor_path(actor.id) %></p>
+            </li>
+        <% end %>
+    </ul>
+</p>
+
+<%= link_to 'Modifier', edit_film_path(@film) %> |
+<%= link_to 'Liste des films', films_path %>

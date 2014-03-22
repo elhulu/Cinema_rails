@@ -1,0 +1,37 @@
+.foot_cr
+{
+    margin-top: 100px;
+    min-height: 200px;
+    border-top: 1px solid #e7e7e7;
+    text-align: center;
+    color: #bebebe;
+    padding-top: 20px;
+
+    background: #f8f8f8;
+    background: -moz-linear-gradient(top,  #f8f8f8 0%, #ffffff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(100%,#ffffff));
+    background: -webkit-linear-gradient(top,  #f8f8f8 0%,#ffffff 100%);
+    background: -o-linear-gradient(top,  #f8f8f8 0%,#ffffff 100%);
+    background: -ms-linear-gradient(top,  #f8f8f8 0%,#ffffff 100%);
+    background: linear-gradient(to bottom,  #f8f8f8 0%,#ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#ffffff',GradientType=0 );
+
+}
+
+td.picture { width: 140px; }
+td.picture img { width: 140px; }
+.field, .actions { margin-bottom: 20px; }
+.actor_list {  list-style: none; margin: 0; padding:0; }
+.actor_list li
+{
+    display:inline-block;
+    vertical-align:top;
+    margin-right: 10px;
+    border-right: 2px solid #dcdcdc;
+    padding: 5px;
+}
+.actor_list li:last-child
+{
+    border-right: none;
+}
+.actor_list p { margin: 0; }

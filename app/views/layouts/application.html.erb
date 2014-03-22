@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cinema • <%= @title_for_layout %></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "bootstrap.min.css" %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <%= link_to "Cinema", "/", class: "navbar-brand" %>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/films">Films</a></li>
+        <li><a href="/actors">Acteurs</a></li>
+      </ul>
+      <%= form_tag(search_path, class: "navbar-form navbar-left", :method => "get" ) do %>
+      	<div class="form-group">
+      		<%= text_field_tag :key, params[:key], class: "form-control", placeholder: "Films, Acteurs", class: "form-control" %>
+      	</div>
+      	<%= button_tag(type: 'submit', class: "btn btn-primary") do %>Rechercher<% end %>
+      <% end %>
+
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container">
+    <%= yield %>
+</div>
+
+
+<footer>
+    <div class="foot_cr">
+        Annuaire des films
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<% if @valid_query %>
+    <h4><small>Votre recherche : <strong><%= @key %></strong></small></h4>
+
+    <h3> <%= pluralize((@films.size + @actors.size),'Resultat') %> </h3>
+
+    <% if @films_match %>
+        <h3><%= pluralize(@films.size,'film') %>:</h3>
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Nom</th>
+              <th>Description</th>
+              <th>Acteurs</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @films.each do |film| %>
+              <tr>
+                <td><%= link_to image_tag(film.picture_url, :width => 100) , film_path(film.id) if film.picture.present? %></td>
+                <td><%= film.name %></td>
+                <td><%= film.description %></td>
+                <td>
+                    <ul class="actor_list">
+                        <% film.actors.each do |actor| %>
+                            <li>
+                                <p><%= link_to image_tag(actor.picture_url, :height => 80), actor_path(actor.id) %></p>
+                                <p><%= link_to actor.first_name + " " + actor.last_name, actor_path(actor.id) %></p>
+                            </li>
+                        <% end %>
+                    </ul>
+                </td>
+                <td><%= link_to 'Fiche du film', film %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    <% end %>
+
+    <% if @actors_match %>
+        <h3><%= pluralize(@actors.size,'acteur') %>:</h3>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Prenom</th>
+              <th>Nom</th>
+              <th>Photo</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @actors.each do |actor| %>
+              <tr>
+                <td><%= actor.first_name %></td>
+                <td><%= actor.last_name %></td>
+                <td><%= link_to image_tag(actor.picture_url, :height => 80) , actor_path(actor.id) if actor.picture.present? %></td>
+                <td><%= link_to 'Fiche acteur', actor %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    <% end %>
+<% else %>
+    <div class="alert alert-info">
+      <p><strong>Votre recherche n'est pas valide.</strong></p>
+      <p><small>Essayez avec un nom de film ou celui d'un acteur ...</small></p>
+    </div>
+<% end %>

@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Prénom:</strong>
+  <%= @actor.first_name %>
+</p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @actor.last_name %>
+</p>
+
+<p>
+  <%= image_tag(@actor.picture_url, :height => 200) if @actor.picture.present? %>
+</p>
+
+<%= link_to 'Modifier', edit_actor_path(@actor) %> |
+<%= link_to 'Retour', actors_path %>
