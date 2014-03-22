@@ -1,28 +1,30 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+== Cinema
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Objectif :
+
+Créer un annuaire de film qui propose un nom, une description et la liste des acteurs qui jouent dans ce film.
+
+Il faut pouvoir créer/éditer/supprimer un film et créer/éditer/supprimer un acteur.
+
+1 acteur peut être dans plusieurs films
+1 film est composé d'au moins 2 acteurs
+
+le tout avec : 
+
+* Ruby on Rails 4
+
+* Bootstrap 3
+
+
+
+## Resultat :
+
+Tout y est :
+
+ * CRUD complet pour les films.
+ * CRUD complet pour les acteurs.
+ * Recherche de film / acteur.
+ * Système d'upload d'image.
+ 
+ 
